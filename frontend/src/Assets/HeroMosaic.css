@@ -1,0 +1,85 @@
+.hero-mosaic {
+  /* Home page already adds padding; keep hero compact so it fits without scrolling */
+  padding: 0 0 10px;
+}
+
+.hero-mosaic__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+  grid-template-areas:
+    "left top"
+    "left bottom";
+
+  /* Keep the whole hero within the viewport (no need to scroll to see it) */
+  height: clamp(280px, 52vh, 420px);
+}
+
+.hero-mosaic__tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  background: #2b2b2b;
+}
+
+.hero-mosaic__tile--left {
+  grid-area: left;
+}
+
+.hero-mosaic__tile--top {
+  grid-area: top;
+}
+
+.hero-mosaic__tile--bottom {
+  grid-area: bottom;
+}
+
+.hero-mosaic__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Optional: subtle fade so images look consistent */
+.hero-mosaic__tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.18) 0%,
+    rgba(0, 0, 0, 0.08) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .hero-mosaic__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "left"
+      "top"
+      "bottom";
+
+    /* Let the stacked tiles size naturally on small screens */
+    height: auto;
+  }
+
+  .hero-mosaic__tile--left {
+    min-height: clamp(200px, 32vh, 280px);
+  }
+
+  .hero-mosaic__tile--top,
+  .hero-mosaic__tile--bottom {
+    min-height: clamp(160px, 26vh, 220px);
+  }
+}
+
+

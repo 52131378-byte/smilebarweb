@@ -1,0 +1,27 @@
+.footer {
+  background-color: rgb(22, 201, 22);
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Pushes items to left and right */
+  align-items: center;
+  flex-wrap: wrap; /* Optional: wraps on smaller screens */
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}

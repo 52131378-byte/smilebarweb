@@ -1,0 +1,25 @@
+.card {
+  border: black;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 350x;
+  margin: 20px;
+  background-color: rgb(17, 16, 16);
+}
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.buy-btn {
+  background-color: #00ff55;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.buy-btn:hover {
+  background-color:red;
+}

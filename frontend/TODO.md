@@ -1,0 +1,2 @@
+- [x] Fix duplicate Home component in frontend/src/pages/home.js by removing the static version
+- [x] Fix SQL syntax error in backend/server.js by removing "cd"

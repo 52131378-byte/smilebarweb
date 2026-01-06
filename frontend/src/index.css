@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --sb-green: #16c916;
+  --sb-green-bg: rgba(22, 201, 22, 0.92);
+  --sb-green-bg-solid: rgba(22, 201, 22, 1);
+  --sb-navbar-offset: 76px; /* used for fixed navbar spacing + anchor scroll */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--sb-navbar-offset);
+}
+
+/* Any element with an id acts like a "section" target for anchor scrolling */
+*[id] {
+  scroll-margin-top: var(--sb-navbar-offset);
+}
+
+.sb-btn {
+  appearance: none;
+  border: 1px solid transparent;
+  background: var(--sb-green-bg);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 150ms ease, background-color 150ms ease, opacity 150ms ease;
+}
+
+.sb-btn:hover {
+  background: var(--sb-green-bg-solid);
+  transform: translateY(-1px);
+}
+
+.sb-btn:focus-visible {
+  outline: 3px solid rgba(22, 201, 22, 0.35);
+  outline-offset: 2px;
+}
+
+.sb-btn:disabled,
+.sb-btn[aria-disabled="true"] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sb-btn--block {
+  width: 100%;
+}
+
+.sb-btn--outline {
+  background: transparent;
+  border-color: var(--sb-green);
+  color: #0b5d11;
+}
+
+.sb-btn--outline:hover {
+  background: rgba(22, 201, 22, 0.12);
+  transform: translateY(-1px);
+}
